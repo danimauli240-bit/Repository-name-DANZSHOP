@@ -1,105 +1,133 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>DANZSHOP - Top Up Diamond</title>
+<meta charset="UTF-8">
+<title>DANZSHOP - Top Up Game</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      margin: 0;
-      padding: 30px;
-      text-align: center;
-    }
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6fb;
+  padding:20px;
+}
 
-    .card {
-      background: #ffffff;
-      max-width: 420px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+.card{
+  max-width:480px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
 
-    .product {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-      text-align: left;
-    }
+h1{
+  text-align:center;
+  margin-bottom:5px;
+}
 
-    .game-img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-    }
+.subtitle{
+  text-align:center;
+  color:#555;
+  margin-bottom:20px;
+}
 
-    h1 {
-      margin: 0;
-    }
+label{
+  font-weight:bold;
+  display:block;
+  margin-top:10px;
+}
 
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      color: #25D366;
-      margin: 10px 0;
-    }
+select, input{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
 
-    .wa-btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: 15px;
-    }
+button{
+  width:100%;
+  background:#25D366;
+  color:#fff;
+  border:none;
+  padding:14px;
+  font-size:16px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:15px;
+}
 
-    .wa-btn:hover {
-      background: #1ebe5d;
-    }
+button:hover{
+  background:#1ebe5d;
+}
 
-    footer {
-      margin-top: 25px;
-      font-size: 13px;
-      color: #64748b;
-    }
-  </style>
+footer{
+  text-align:center;
+  font-size:13px;
+  color:#64748b;
+  margin-top:20px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>DANZSHOP</h1>
-    <p>Top Up Diamond Game • Aman • Cepat</p>
+<div class="card">
+<h1>DANZSHOP</h1>
+<p class="subtitle">Top Up Diamond Game • Aman • Cepat</p>
 
-    <div class="product">
-      <img
-        class="game-img"
-        src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png"
-        alt="Mobile Legends">
+<!-- PILIH GAME -->
+<label>Pilih Game</label>
+<select id="game">
+  <option value="Mobile Legends">Mobile Legends</option>
+  <option value="Free Fire">Free Fire</option>
+  <option value="PUBG Mobile">PUBG Mobile</option>
+</select>
 
-      <div>
-        <strong>Mobile Legends</strong>
-        <div class="price">Mulai Rp10.000</div>
-        <p>✔ Legal<br>✔ Fast Proses</p>
-      </div>
-    </div>
+<!-- PILIH DIAMOND -->
+<label>Pilih Diamond</label>
+<select id="diamond">
+  <option value="86 Diamond">86 Diamond</option>
+  <option value="172 Diamond">172 Diamond</option>
+  <option value="257 Diamond">257 Diamond</option>
+  <option value="344 Diamond">344 Diamond</option>
+  <option value="Custom">Custom</option>
+</select>
 
-    <a
-      class="wa-btn"
-      href="https://wa.me/6288973654391?text=Halo%20saya%20mau%20top%20up%20diamond%20Mobile%20Legends"
-      target="_blank">
-      💬 Chat WhatsApp
-    </a>
+<!-- ID & SERVER -->
+<label>ID Game</label>
+<input type="text" id="userid" placeholder="Masukkan ID Game">
 
-    <footer>
-      © 2026 DANZSHOP
-    </footer>
-  </div>
+<label>Server</label>
+<input type="text" id="server" placeholder="Contoh: 1234">
+
+<button onclick="orderWA()">💬 Order via WhatsApp</button>
+
+<footer>
+© 2026 DANZSHOP
+</footer>
+</div>
+
+<script>
+function orderWA(){
+  const game = document.getElementById("game").value;
+  const diamond = document.getElementById("diamond").value;
+  const id = document.getElementById("userid").value;
+  const server = document.getElementById("server").value;
+
+  const pesan =
+`Halo Admin DANZSHOP
+Saya mau top up:
+
+Game: ${game}
+Diamond: ${diamond}
+ID: ${id}
+Server: ${server}`;
+
+  const wa = "https://wa.me/6288973654391?text=" + encodeURIComponent(pesan);
+  window.open(wa, "_blank");
+}
+</script>
 
 </body>
 </html>
