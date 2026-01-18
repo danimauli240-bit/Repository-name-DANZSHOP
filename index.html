@@ -2,34 +2,49 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>DANZSHOP - Produk Digital</title>
+  <title>DANZSHOP - Top Up Diamond</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 30px;
       text-align: center;
-      padding: 40px;
     }
 
     .card {
-      background: white;
-      max-width: 400px;
+      background: #ffffff;
+      max-width: 420px;
       margin: auto;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .game-img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin: 0;
     }
 
     .price {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
       color: #25D366;
-      margin: 15px 0;
+      margin: 10px 0;
     }
 
     .wa-btn {
@@ -37,14 +52,20 @@
       background: #25D366;
       color: white;
       padding: 14px 24px;
-      font-size: 18px;
       border-radius: 8px;
       text-decoration: none;
+      font-size: 16px;
       margin-top: 15px;
     }
 
     .wa-btn:hover {
       background: #1ebe5d;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #64748b;
     }
   </style>
 </head>
@@ -52,21 +73,32 @@
 <body>
 
   <div class="card">
-    <h1>🔥 DANZSHOP</h1>
-    <p>Jual APK Premium & Produk Digital</p>
+    <h1>DANZSHOP</h1>
+    <p>Top Up Diamond Game • Aman • Cepat</p>
 
-    <div class="price">Mulai Rp10.000</div>
+    <div class="product">
+      <img
+        class="game-img"
+        src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png"
+        alt="Mobile Legends">
 
-    <p>✔️ Murah<br>
-       ✔️ Aman<br>
-       ✔️ Fast respon</p>
+      <div>
+        <strong>Mobile Legends</strong>
+        <div class="price">Mulai Rp10.000</div>
+        <p>✔ Legal<br>✔ Fast Proses</p>
+      </div>
+    </div>
 
-    <a 
+    <a
       class="wa-btn"
-      href="https://wa.me/6288973654391?text=Halo%20admin%20DANZSHOP,%20saya%20mau%20order%20produk"
+      href="https://wa.me/6288973654391?text=Halo%20saya%20mau%20top%20up%20diamond%20Mobile%20Legends"
       target="_blank">
       💬 Chat WhatsApp
     </a>
+
+    <footer>
+      © 2026 DANZSHOP
+    </footer>
   </div>
 
 </body>
