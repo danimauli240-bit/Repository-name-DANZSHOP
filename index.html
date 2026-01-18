@@ -8,49 +8,48 @@
 <style>
 :root{
   --bg:#0f172a;
-  --card:#020617;
+  --card:#111827;
   --accent:#22c55e;
   --text:#e5e7eb;
-  --muted:#94a3b8;
+  --muted:#9ca3af;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
 body{
   margin:0;
-  font-family:Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
 }
 header{
   text-align:center;
-  padding:28px 16px;
+  padding:30px 15px;
 }
 header h1{
-  margin:0;
   color:var(--accent);
+  margin:0;
 }
 header p{
-  margin-top:6px;
   color:var(--muted);
+  margin-top:8px;
 }
 .container{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
-  padding:16px;
+  padding:15px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:16px;
+  gap:20px;
 }
 .card{
   background:var(--card);
   border-radius:16px;
   padding:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,.5);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 .game-head{
   display:flex;
   align-items:center;
   gap:12px;
-  justify-content:center;
+  margin-bottom:10px;
 }
 .game-img{
   width:60px;
@@ -58,11 +57,10 @@ header p{
   object-fit:contain;
 }
 .price{
-  text-align:center;
   margin:6px 0;
+  font-weight:bold;
 }
-.price.main{color:var(--accent);font-size:18px;font-weight:bold}
-.price.total{font-size:20px;font-weight:bold}
+.price.main{color:var(--accent)}
 select,input{
   width:100%;
   padding:10px;
@@ -73,9 +71,9 @@ select,input{
 }
 .wa-btn{
   display:block;
-  margin-top:14px;
+  margin-top:12px;
   background:var(--accent);
-  color:#020617;
+  color:#052e16;
   text-align:center;
   padding:12px;
   border-radius:10px;
@@ -96,29 +94,27 @@ footer{
 <header>
   <h1>DANZSHOP</h1>
   <p>Top Up Diamond Game • Aman • Fast Respon</p>
+  <p>Metode Pembayaran: <b>DANA</b></p>
 </header>
 
 <div class="container">
 
 <!-- MOBILE LEGENDS -->
 <div class="card" data-game="Mobile Legends" data-admin="2000">
-  <div class="game-head"><div style="margin-top:10px;text-align:center;font-size:14px;color:#94a3b8">
-  Metode Pembayaran: <b style="color:#22c55e">DANA</b>
-  </div>
+  <div class="game-head">
     <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
-    <h3>Mobile Legends</h3><div style="margin-top:10px;text-align:center;font-size:14px;color:#94a3b8">
-  Metode Pembayaran: <b style="color:#22c55e">DANA</b>
-    </div>
+    <h3>Mobile Legends</h3>
   </div>
 
   <div class="price main"></div>
+  <div class="price admin"></div>
   <div class="price total"></div>
 
   <select class="pack">
     <option data-price="15000">86 Diamond</option>
-    <option data-price="27000">172 Diamond</option>
-    <option data-price="38000">257 Diamond</option>
-    <option data-price="55000">344 Diamond</option>
+    <option data-price="30000">172 Diamond</option>
+    <option data-price="45000">257 Diamond</option>
+    <option data-price="60000">344 Diamond</option>
   </select>
 
   <input class="uid" placeholder="User ID">
@@ -135,16 +131,18 @@ footer{
   </div>
 
   <div class="price main"></div>
+  <div class="price admin"></div>
   <div class="price total"></div>
 
   <select class="pack">
     <option data-price="10000">70 Diamond</option>
-    <option data-price="18000">140 Diamond</option>
+    <option data-price="20000">140 Diamond</option>
     <option data-price="35000">355 Diamond</option>
-    <option data-price="60000">720 Diamond</option>
+    <option data-price="70000">720 Diamond</option>
   </select>
 
   <input class="uid" placeholder="Player ID">
+
   <a class="wa-btn" target="_blank">Order via WhatsApp</a>
 </div>
 
@@ -156,16 +154,18 @@ footer{
   </div>
 
   <div class="price main"></div>
+  <div class="price admin"></div>
   <div class="price total"></div>
 
   <select class="pack">
-    <option data-price="22000">60 UC</option>
-    <option data-price="55000">180 UC</option>
-    <option data-price="90000">325 UC</option>
-    <option data-price="160000">600 UC</option>
+    <option data-price="20000">60 UC</option>
+    <option data-price="40000">180 UC</option>
+    <option data-price="80000">325 UC</option>
+    <option data-price="150000">600 UC</option>
   </select>
 
   <input class="uid" placeholder="Player ID">
+
   <a class="wa-btn" target="_blank">Order via WhatsApp</a>
 </div>
 
@@ -177,14 +177,15 @@ footer{
 
 <script>
 const WA = "6288973654391";
-const rupiah = x => "Rp " + x.toLocaleString("id-ID");
+const rupiah = n => "Rp " + n.toLocaleString("id-ID");
 
 document.querySelectorAll(".card").forEach(card=>{
   const pack = card.querySelector(".pack");
-  const priceMain = card.querySelector(".price.main");
-  const priceTotal = card.querySelector(".price.total");
   const uid = card.querySelector(".uid");
   const server = card.querySelector(".server");
+  const priceMain = card.querySelector(".price.main");
+  const priceAdmin = card.querySelector(".price.admin");
+  const priceTotal = card.querySelector(".price.total");
   const btn = card.querySelector(".wa-btn");
 
   function update(){
@@ -193,21 +194,19 @@ document.querySelectorAll(".card").forEach(card=>{
     const total = price + admin;
 
     priceMain.textContent = "Harga: " + rupiah(price);
+    priceAdmin.textContent = "Admin: " + rupiah(admin);
     priceTotal.textContent = "Total: " + rupiah(total);
 
-    let msg =
-`Halo DANZSHOP
-Saya mau top up ${card.dataset.game}
+    let msg = `Halo DANZSHOP%0A
+Game: ${card.dataset.game}%0A
+Paket: ${pack.value}%0A
+Harga: ${rupiah(price)}%0A
+Admin: ${rupiah(admin)}%0A
+TOTAL: ${rupiah(total)}%0A
+ID: ${uid.value || "-"}%0A
+Server: ${server ? server.value : "-"}`;
 
-Paket: ${pack.value}
-Harga: ${rupiah(price)}
-Admin: ${rupiah(admin)}
-TOTAL: ${rupiah(total)}
-
-ID: ${uid?.value || "-"}
-Server: ${server?.value || "-"}`;
-
-    btn.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+    btn.href = `https://wa.me/${WA}?text=${msg}`;
   }
 
   pack.onchange = update;
@@ -218,4 +217,4 @@ Server: ${server?.value || "-"}`;
 </script>
 
 </body>
-</html>
+  </html>
