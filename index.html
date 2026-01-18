@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>DANZSHOP - Top Up Game</title>
+<title>DANZSHOP - Top Up Diamond Game</title>
 
 <style>
 body{
@@ -29,6 +29,18 @@ h1{
   text-align:center;
   color:#555;
   margin-bottom:20px;
+}
+
+/* GAMBAR GAME */
+.game-box{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.game-img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
 }
 
 label{
@@ -76,9 +88,16 @@ footer{
 <h1>DANZSHOP</h1>
 <p class="subtitle">Top Up Diamond Game • Aman • Cepat</p>
 
+<!-- GAMBAR GAME -->
+<div class="game-box">
+  <img id="gameImage" class="game-img"
+       src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png"
+       alt="Game">
+</div>
+
 <!-- PILIH GAME -->
 <label>Pilih Game</label>
-<select id="game">
+<select id="game" onchange="ubahGame()">
   <option value="Mobile Legends">Mobile Legends</option>
   <option value="Free Fire">Free Fire</option>
   <option value="PUBG Mobile">PUBG Mobile</option>
@@ -109,6 +128,21 @@ footer{
 </div>
 
 <script>
+// GANTI GAMBAR SAAT GAME DIPILIH
+function ubahGame(){
+  const game = document.getElementById("game").value;
+  const img = document.getElementById("gameImage");
+
+  if(game === "Mobile Legends"){
+    img.src = "https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png";
+  } else if(game === "Free Fire"){
+    img.src = "https://upload.wikimedia.org/wikipedia/commons/5/5f/Free_Fire_Logo.png";
+  } else if(game === "PUBG Mobile"){
+    img.src = "https://upload.wikimedia.org/wikipedia/commons/4/44/PUBG_Mobile_Logo.png";
+  }
+}
+
+// FORMAT ORDER WA OTOMATIS
 function orderWA(){
   const game = document.getElementById("game").value;
   const diamond = document.getElementById("diamond").value;
