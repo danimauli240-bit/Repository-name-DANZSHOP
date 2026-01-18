@@ -5,15 +5,14 @@
 <title>DANZSHOP - Top Up Diamond Game</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#f1f3f7;
+  color:#111;
 }
+.dark body{background:#0f172a;color:#e5e7eb}
 
 /* HEADER */
 header{
@@ -23,21 +22,11 @@ header{
   text-align:center;
 }
 
-header h1{
-  margin:0;
-  font-size:28px;
-}
-
-header p{
-  margin-top:6px;
-  color:#cbd5e1;
-}
-
 /* CONTAINER */
 .container{
   max-width:1100px;
   margin:auto;
-  padding:30px 15px;
+  padding:25px 15px;
 }
 
 /* GRID */
@@ -47,97 +36,71 @@ header p{
   gap:25px;
 }
 
-/* FORM */
-.form-box{
+/* BOX */
+.box{
   background:white;
   padding:25px;
   border-radius:14px;
   box-shadow:0 6px 15px rgba(0,0,0,.08);
 }
+.dark .box{background:#020617}
 
-.form-box h2{
-  margin-top:0;
-}
-
-label{
-  font-weight:bold;
-  display:block;
-  margin-top:12px;
-}
-
+/* FORM */
+label{font-weight:bold;display:block;margin-top:12px}
 select,input{
   width:100%;
   padding:12px;
   margin-top:6px;
   border-radius:10px;
   border:1px solid #ccc;
-  font-size:15px;
 }
-
-/* GAME IMAGE */
-.game-preview{
-  text-align:center;
-  margin:15px 0;
-}
-
-.game-preview img{
-  width:110px;
-  height:110px;
-  object-fit:contain;
-}
-
-/* BUTTON */
 button{
   width:100%;
   background:#25D366;
   color:white;
   border:none;
-  padding:16px;
-  font-size:17px;
+  padding:15px;
+  font-size:16px;
   border-radius:10px;
   cursor:pointer;
   margin-top:18px;
 }
+button:hover{background:#1ebe5d}
 
-button:hover{
-  background:#1ebe5d;
-}
+/* GAME IMG */
+.game-preview{text-align:center;margin:15px 0}
+.game-preview img{width:110px;height:110px;object-fit:contain}
 
-/* INFO BOX */
-.info-box{
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 6px 15px rgba(0,0,0,.08);
-}
-
-.info-box h3{
-  margin-top:0;
-}
-
-.badge{
-  display:inline-block;
-  background:#e0fbe9;
+/* PRICE */
+.price{
+  margin-top:10px;
+  font-size:18px;
+  font-weight:bold;
   color:#16a34a;
-  padding:6px 10px;
-  border-radius:6px;
-  font-size:13px;
-  margin:5px 0;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  font-size:13px;
-  color:#64748b;
+/* FLOAT WA */
+.float-wa{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* DARK TOGGLE */
+.toggle{
+  margin-top:15px;
+  background:#334155;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .grid{
-    grid-template-columns:1fr;
-  }
+  .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -146,101 +109,120 @@ footer{
 
 <header>
   <h1>DANZSHOP</h1>
-  <p>Top Up Diamond Game • Aman • Cepat • Terpercaya</p>
+  <p>Top Up Diamond Game • Aman • Cepat</p>
 </header>
 
 <div class="container">
-  <div class="grid">
+<div class="grid">
 
-    <!-- FORM ORDER -->
-    <div class="form-box">
-      <h2>Form Top Up</h2>
+<!-- FORM -->
+<div class="box">
+<h2>Form Top Up</h2>
 
-      <div class="game-preview">
-        <img id="gameImage"
-        src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png">
-      </div>
-
-      <label>Pilih Game</label>
-      <select id="game" onchange="ubahGame()">
-        <option>Mobile Legends</option>
-        <option>Free Fire</option>
-        <option>PUBG Mobile</option>
-      </select>
-
-      <label>Pilih Diamond</label>
-      <select id="diamond">
-        <option>86 Diamond</option>
-        <option>172 Diamond</option>
-        <option>257 Diamond</option>
-        <option>344 Diamond</option>
-        <option>Custom</option>
-      </select>
-
-      <label>ID Game</label>
-      <input id="userid" placeholder="Masukkan ID Game">
-
-      <label>Server</label>
-      <input id="server" placeholder="Contoh: 1234">
-
-      <button onclick="orderWA()">Order via WhatsApp</button>
-    </div>
-
-    <!-- INFO -->
-    <div class="info-box">
-      <h3>Kenapa DANZSHOP?</h3>
-      <span class="badge">✔ Aman</span>
-      <span class="badge">✔ Proses Cepat</span>
-      <span class="badge">✔ Harga Murah</span>
-
-      <p style="margin-top:15px">
-        • Proses manual & aman<br>
-        • Cocok untuk ML, FF, PUBG<br>
-        • Support via WhatsApp
-      </p>
-    </div>
-
-  </div>
+<div class="game-preview">
+<img id="gameImg" src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png">
 </div>
 
-<footer>
-© 2026 DANZSHOP • All Rights Reserved
-</footer>
+<label>Game</label>
+<select id="game" onchange="ubahGame()">
+  <option value="ml">Mobile Legends</option>
+  <option value="ff">Free Fire</option>
+  <option value="pubg">PUBG Mobile</option>
+</select>
+
+<label>Diamond</label>
+<select id="diamond" onchange="updateHarga()"></select>
+
+<div class="price" id="harga">Harga: -</div>
+
+<label>ID Game</label>
+<input id="userid" placeholder="Masukkan ID">
+
+<label>Server</label>
+<input id="server" placeholder="Masukkan Server">
+
+<button onclick="order()">Order via WhatsApp</button>
+<button class="toggle" onclick="toggleDark()">Dark Mode</button>
+</div>
+
+<!-- INFO -->
+<div class="box">
+<h3>Kenapa DANZSHOP?</h3>
+<p>
+✔ Aman<br>
+✔ Proses Cepat<br>
+✔ Harga Murah<br>
+✔ Support WhatsApp
+</p>
+</div>
+
+</div>
+</div>
+
+<a class="float-wa" href="https://wa.me/6288973654391" target="_blank">💬 WA</a>
 
 <script>
+const paket={
+  ml:[
+    {d:"86 Diamond",h:10000},
+    {d:"172 Diamond",h:19000},
+    {d:"257 Diamond",h:28000}
+  ],
+  ff:[
+    {d:"100 Diamond",h:15000},
+    {d:"210 Diamond",h:29000}
+  ],
+  pubg:[
+    {d:"60 UC",h:18000},
+    {d:"120 UC",h:35000}
+  ]
+};
+
 function ubahGame(){
-  const game = document.getElementById("game").value;
-  const img = document.getElementById("gameImage");
-
-  if(game === "Mobile Legends"){
-    img.src = "https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png";
-  }else if(game === "Free Fire"){
-    img.src = "https://upload.wikimedia.org/wikipedia/commons/5/5f/Free_Fire_Logo.png";
-  }else{
-    img.src = "https://upload.wikimedia.org/wikipedia/commons/4/44/PUBG_Mobile_Logo.png";
-  }
+  const g=document.getElementById("game").value;
+  const img=document.getElementById("gameImg");
+  const d=document.getElementById("diamond");
+  d.innerHTML="";
+  paket[g].forEach(p=>{
+    const o=document.createElement("option");
+    o.value=p.d;o.text=p.d;d.appendChild(o);
+  });
+  updateHarga();
+  img.src=g==="ml"
+    ?"https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png"
+    :g==="ff"
+    ?"https://upload.wikimedia.org/wikipedia/commons/5/5f/Free_Fire_Logo.png"
+    :"https://upload.wikimedia.org/wikipedia/commons/4/44/PUBG_Mobile_Logo.png";
 }
 
-function orderWA(){
-  const game = document.getElementById("game").value;
-  const diamond = document.getElementById("diamond").value;
-  const id = document.getElementById("userid").value;
-  const server = document.getElementById("server").value;
+function updateHarga(){
+  const g=document.getElementById("game").value;
+  const d=document.getElementById("diamond").value;
+  const p=paket[g].find(x=>x.d===d);
+  document.getElementById("harga").innerText="Harga: Rp"+p.h;
+}
 
-  const pesan =
-`Halo Admin DANZSHOP
-Saya mau top up:
-
-Game: ${game}
-Diamond: ${diamond}
+function order(){
+  const id=document.getElementById("userid").value;
+  const s=document.getElementById("server").value;
+  if(!id||!s){alert("ID & Server wajib diisi");return}
+  const g=document.getElementById("game").options[document.getElementById("game").selectedIndex].text;
+  const d=document.getElementById("diamond").value;
+  const h=document.getElementById("harga").innerText;
+  const msg=`Halo Admin DANZSHOP
+Game: ${g}
+Paket: ${d}
+${h}
 ID: ${id}
-Server: ${server}`;
-
-  window.open(
-    "https://wa.me/6288973654391?text=" + encodeURIComponent(pesan),
-    "_blank"
-  );
+Server: ${s}`;
+  window.open("https://wa.me/6288973654391?text="+encodeURIComponent(msg));
 }
+
+function toggleDark(){
+  document.documentElement.classList.toggle("dark");
+}
+
+ubahGame();
 </script>
 
 </body>
