@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>DANZSHOP - Top Up Diamond Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DANZSHOP - Top Up Game</title>
 
   <style>
     body {
@@ -15,33 +15,42 @@
     }
 
     header {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      padding: 25px;
-      color: white;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #22c55e;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #94a3b8;
     }
 
     .container {
-      max-width: 1100px;
-      margin: 30px auto;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
 
     .card {
       background: #020617;
       border-radius: 14px;
       padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       position: relative;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
     }
 
     .badge {
       position: absolute;
       top: 12px;
       right: 12px;
-      background: #f59e0b;
+      background: gold;
       color: black;
       font-size: 12px;
       font-weight: bold;
@@ -60,11 +69,10 @@
       margin: 10px 0 5px;
     }
 
-    ul {
-      text-align: left;
-      padding-left: 18px;
-      font-size: 14px;
-      color: #cbd5f5;
+    .price {
+      color: #22c55e;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     input, select {
@@ -92,102 +100,86 @@
     }
 
     footer {
-      margin-top: 40px;
-      padding: 20px;
+      margin: 40px 0 20px;
       font-size: 13px;
-      color: #94a3b8;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>DANZSHOP</h1>
-  <p>Top Up Diamond Game • Aman • Proses Cepat</p>
-</header>
+  <header>
+    <h1>DANZSHOP</h1>
+    <p>Top Up Diamond Game • Aman • Cepat • Terpercaya</p>
+  </header>
 
-<div class="container">
+  <div class="container">
 
-  <!-- MOBILE LEGENDS -->
-  <div class="card">
-    <span class="badge">BEST SELLER</span>
-    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
-    <h3>Mobile Legends</h3>
+    <!-- MOBILE LEGENDS -->
+    <div class="card">
+      <div class="badge">BEST SELLER</div>
+      <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
+      <h3>Mobile Legends</h3>
+      <div class="price">Mulai Rp10.000</div>
 
-    <ul>
-      <li>86 Diamond</li>
-      <li>172 Diamond</li>
-      <li>257 Diamond</li>
-    </ul>
+      <input type="text" placeholder="User ID">
+      <input type="text" placeholder="Server ID">
 
-    <input id="ml-id" placeholder="ID Player">
-    <input id="ml-server" placeholder="Server">
-    <select id="ml-pack">
-      <option>86 Diamond</option>
-      <option>172 Diamond</option>
-      <option>257 Diamond</option>
-    </select>
+      <select>
+        <option>86 Diamonds</option>
+        <option>172 Diamonds</option>
+        <option>257 Diamonds</option>
+      </select>
 
-    <a class="wa-btn" target="_blank"
-       href="https://wa.me/6288973654391?text=Halo%20DANZSHOP%0ASaya%20mau%20topup%20Mobile%20Legends%0AID:%20%5BISI%20ID%5D%0AServer:%20%5BISI%20SERVER%5D%0APaket:%20%5BPILIH%20DIAMOND%5D">
-       Order via WhatsApp
-    </a>
+      <a class="wa-btn" href="https://wa.me/6288973654391?text=Halo%20DANZSHOP,%20saya%20ingin%20top%20up%20Mobile%20Legends" target="_blank">
+        Chat WhatsApp
+      </a>
+    </div>
+
+    <!-- FREE FIRE -->
+    <div class="card">
+      <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Free_Fire_Logo.png">
+      <h3>Free Fire</h3>
+      <div class="price">Mulai Rp5.000</div>
+
+      <input type="text" placeholder="Player ID">
+
+      <select>
+        <option>70 Diamonds</option>
+        <option>140 Diamonds</option>
+        <option>355 Diamonds</option>
+      </select>
+
+      <a class="wa-btn" href="https://wa.me/6288973654391?text=Halo%20DANZSHOP,%20saya%20ingin%20top%20up%20Free%20Fire" target="_blank">
+        Chat WhatsApp
+      </a>
+    </div>
+
+    <!-- PUBG -->
+    <div class="card">
+      <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/PUBG_Mobile_logo.png">
+      <h3>PUBG Mobile</h3>
+      <div class="price">Mulai Rp15.000</div>
+
+      <input type="text" placeholder="Player ID">
+
+      <select>
+        <option>60 UC</option>
+        <option>180 UC</option>
+        <option>600 UC</option>
+      </select>
+
+      <a class="wa-btn" href="https://wa.me/6288973654391?text=Halo%20DANZSHOP,%20saya%20ingin%20top%20up%20PUBG%20Mobile" target="_blank">
+        Chat WhatsApp
+      </a>
+    </div>
+
   </div>
 
-  <!-- FREE FIRE -->
-  <div class="card">
-    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/6/6c/Garena_Free_Fire_logo.png">
-    <h3>Free Fire</h3>
-
-    <ul>
-      <li>100 Diamond</li>
-      <li>210 Diamond</li>
-      <li>720 Diamond</li>
-    </ul>
-
-    <input placeholder="ID Player">
-    <select>
-      <option>100 Diamond</option>
-      <option>210 Diamond</option>
-      <option>720 Diamond</option>
-    </select>
-
-    <a class="wa-btn" target="_blank"
-       href="https://wa.me/6288973654391?text=Halo%20DANZSHOP%0ASaya%20mau%20topup%20Free%20Fire">
-       Order via WhatsApp
-    </a>
-  </div>
-
-  <!-- PUBG -->
-  <div class="card">
-    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/7/7e/PUBG_Mobile_logo.png">
-    <h3>PUBG Mobile</h3>
-
-    <ul>
-      <li>60 UC</li>
-      <li>325 UC</li>
-      <li>660 UC</li>
-    </ul>
-
-    <input placeholder="ID Player">
-    <select>
-      <option>60 UC</option>
-      <option>325 UC</option>
-      <option>660 UC</option>
-    </select>
-
-    <a class="wa-btn" target="_blank"
-       href="https://wa.me/6288973654391?text=Halo%20DANZSHOP%0ASaya%20mau%20topup%20PUBG%20Mobile">
-       Order via WhatsApp
-    </a>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 DANZSHOP • All Rights Reserved
-</footer>
+  <footer>
+    © 2026 DANZSHOP • Top Up Game Online
+  </footer>
 
 </body>
 </html>
