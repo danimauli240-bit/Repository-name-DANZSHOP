@@ -19,60 +19,44 @@ header{
 header h1{
   margin:0;
   color:#22c55e;
-  font-size:28px;
 }
 header p{
-  margin-top:8px;
   color:#94a3b8;
 }
 .container{
-  max-width:1000px;
+  max-width:420px;
   margin:auto;
   padding:20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
 }
 .card{
   background:#020617;
   border-radius:16px;
   padding:20px;
   box-shadow:0 10px 30px rgba(0,0,0,.6);
-  position:relative;
-}
-.card:hover{
-  transform:translateY(-3px);
-}
-.badge{
-  position:absolute;
-  top:12px;
-  right:12px;
-  background:linear-gradient(135deg,#f59e0b,#facc15);
-  color:#020617;
-  font-size:11px;
-  font-weight:800;
-  padding:5px 10px;
-  border-radius:999px;
 }
 .game-head{
   display:flex;
   align-items:center;
   gap:10px;
   justify-content:center;
+  margin-bottom:10px;
 }
 .game-img{
-  width:70px;
-  height:70px;
+  width:60px;
+  height:60px;
   object-fit:contain;
 }
-h3{
-  margin:0;
-}
 .price{
-  margin:10px 0;
-  font-size:18px;
+  text-align:center;
+  margin:6px 0;
   font-weight:bold;
+}
+.price.main{
   color:#22c55e;
+  font-size:20px;
+}
+.price.total{
+  font-size:22px;
 }
 input,select{
   width:100%;
@@ -93,12 +77,9 @@ input,select{
   font-weight:bold;
   text-align:center;
 }
-.wa-btn:hover{
-  background:#16a34a;
-}
 footer{
   text-align:center;
-  padding:20px;
+  margin:30px 0;
   font-size:13px;
   color:#64748b;
 }
@@ -114,126 +95,85 @@ footer{
 
 <div class="container">
 
-<!-- MOBILE LEGENDS -->
 <div class="card">
-  <span class="badge">BEST SELLER</span>
+
   <div class="game-head">
-    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
+    <img class="game-img"
+    src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
     <h3>Mobile Legends</h3>
   </div>
 
-  <div class="price" id="ml-price">Rp 10.000</div>
+  <div class="price main" id="price">Rp 10.000</div>
+  <div class="price">Admin: <span id="admin">Rp 1.000</span></div>
+  <div class="price total">Total: <span id="total">Rp 11.000</span></div>
 
-  <select id="ml-pack">
+  <select id="pack">
     <option data-price="10000">86 Diamonds</option>
     <option data-price="19000">172 Diamonds</option>
     <option data-price="28000">257 Diamonds</option>
   </select>
 
-  <input id="ml-id" placeholder="User ID">
-  <input id="ml-server" placeholder="Server">
+  <input id="userid" placeholder="User ID">
+  <input id="server" placeholder="Server">
 
-  <a id="ml-order" class="wa-btn" target="_blank">Order via WhatsApp</a>
-</div>
+  <a id="order" class="wa-btn" target="_blank">
+    Order via WhatsApp
+  </a>
 
-<!-- FREE FIRE -->
-<div class="card">
-  <div class="game-head">
-    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Free_Fire_Logo.png">
-    <h3>Free Fire</h3>
-  </div>
-
-  <div class="price" id="ff-price">Rp 5.000</div>
-
-  <select id="ff-pack">
-    <option data-price="5000">70 Diamonds</option>
-    <option data-price="10000">140 Diamonds</option>
-    <option data-price="25000">355 Diamonds</option>
-  </select>
-
-  <input id="ff-id" placeholder="Player ID">
-
-  <a id="ff-order" class="wa-btn" target="_blank">Order via WhatsApp</a>
-</div>
-
-<!-- PUBG -->
-<div class="card">
-  <div class="game-head">
-    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/PUBG_Mobile_logo.png">
-    <h3>PUBG Mobile</h3>
-  </div>
-
-  <div class="price" id="pubg-price">Rp 15.000</div>
-
-  <select id="pubg-pack">
-    <option data-price="15000">60 UC</option>
-    <option data-price="45000">180 UC</option>
-    <option data-price="120000">600 UC</option>
-  </select>
-
-  <input id="pubg-id" placeholder="Player ID">
-
-  <a id="pubg-order" class="wa-btn" target="_blank">Order via WhatsApp</a>
 </div>
 
 </div>
 
 <footer>
-© 2026 DANZSHOP • Top Up Game Online
+© 2026 DANZSHOP
 </footer>
 
 <script>
 const WA = "6288973654391";
+const ADMIN = 1000;
+
+const pack = document.getElementById("pack");
+const priceText = document.getElementById("price");
+const adminText = document.getElementById("admin");
+const totalText = document.getElementById("total");
+const orderBtn = document.getElementById("order");
+
+const userid = document.getElementById("userid");
+const server = document.getElementById("server");
 
 function rupiah(x){
   return "Rp " + x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");
 }
 
-/* MOBILE LEGENDS */
-function updateML(){
-  let p = ml_pack.options[ml_pack.selectedIndex];
-  let price = p.dataset.price;
-  ml_price.innerText = rupiah(price);
-  ml_order.href =
-    "https://wa.me/"+WA+"?text="+encodeURIComponent(
-      "Halo DANZSHOP\nSaya mau top up Mobile Legends\nPaket: "+p.text+
-      "\nHarga: "+rupiah(price)+"\nID: "+ml_id.value+"\nServer: "+ml_server.value
-    );
-}
-ml_pack.onchange = updateML;
-ml_id.oninput = updateML;
-ml_server.oninput = updateML;
-updateML();
+function update(){
+  let p = pack.options[pack.selectedIndex];
+  let price = Number(p.dataset.price);
+  let total = price + ADMIN;
 
-/* FREE FIRE */
-function updateFF(){
-  let p = ff_pack.options[ff_pack.selectedIndex];
-  let price = p.dataset.price;
-  ff_price.innerText = rupiah(price);
-  ff_order.href =
-    "https://wa.me/"+WA+"?text="+encodeURIComponent(
-      "Halo DANZSHOP\nSaya mau top up Free Fire\nPaket: "+p.text+
-      "\nHarga: "+rupiah(price)+"\nID: "+ff_id.value
-    );
-}
-ff_pack.onchange = updateFF;
-ff_id.oninput = updateFF;
-updateFF();
+  priceText.innerText = rupiah(price);
+  adminText.innerText = rupiah(ADMIN);
+  totalText.innerText = rupiah(total);
 
-/* PUBG */
-function updatePUBG(){
-  let p = pubg_pack.options[pubg_pack.selectedIndex];
-  let price = p.dataset.price;
-  pubg_price.innerText = rupiah(price);
-  pubg_order.href =
-    "https://wa.me/"+WA+"?text="+encodeURIComponent(
-      "Halo DANZSHOP\nSaya mau top up PUBG Mobile\nPaket: "+p.text+
-      "\nHarga: "+rupiah(price)+"\nID: "+pubg_id.value
-    );
+  let msg =
+`Halo DANZSHOP
+Saya mau top up Mobile Legends
+
+Paket: ${p.text}
+Harga: ${rupiah(price)}
+Admin: ${rupiah(ADMIN)}
+TOTAL: ${rupiah(total)}
+
+ID: ${userid.value}
+Server: ${server.value}`;
+
+  orderBtn.href =
+    "https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
 }
-pubg_pack.onchange = updatePUBG;
-pubg_id.oninput = updatePUBG;
-updatePUBG();
+
+pack.onchange = update;
+userid.oninput = update;
+server.oninput = update;
+update();
 </script>
 
 </body>
