@@ -16,17 +16,15 @@ header{
   text-align:center;
   padding:30px 15px;
 }
-header h1{
-  margin:0;
-  color:#22c55e;
-}
-header p{
-  color:#94a3b8;
-}
+header h1{margin:0;color:#22c55e}
+header p{color:#94a3b8}
 .container{
-  max-width:420px;
+  max-width:1100px;
   margin:auto;
   padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
 }
 .card{
   background:#020617;
@@ -37,34 +35,23 @@ header p{
 .game-head{
   display:flex;
   align-items:center;
-  gap:10px;
   justify-content:center;
-  margin-bottom:10px;
+  gap:10px;
 }
 .game-img{
   width:60px;
   height:60px;
   object-fit:contain;
 }
-.price{
-  text-align:center;
-  margin:6px 0;
-  font-weight:bold;
-}
-.price.main{
-  color:#22c55e;
-  font-size:20px;
-}
-.price.total{
-  font-size:22px;
-}
+.price{margin:6px 0;text-align:center;font-weight:bold}
+.main{color:#22c55e;font-size:18px}
+.total{font-size:20px}
 input,select{
   width:100%;
   padding:10px;
   margin-top:8px;
   border-radius:8px;
   border:none;
-  outline:none;
 }
 .wa-btn{
   display:block;
@@ -77,12 +64,7 @@ input,select{
   font-weight:bold;
   text-align:center;
 }
-footer{
-  text-align:center;
-  margin:30px 0;
-  font-size:13px;
-  color:#64748b;
-}
+footer{text-align:center;margin:30px 0;color:#64748b}
 </style>
 </head>
 
@@ -95,85 +77,123 @@ footer{
 
 <div class="container">
 
-<div class="card">
-
+<!-- ===== MOBILE LEGENDS ===== -->
+<div class="card" data-game="Mobile Legends" data-admin="1000">
   <div class="game-head">
-    <img class="game-img"
-    src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
     <h3>Mobile Legends</h3>
   </div>
 
-  <div class="price main" id="price">Rp 10.000</div>
-  <div class="price">Admin: <span id="admin">Rp 1.000</span></div>
-  <div class="price total">Total: <span id="total">Rp 11.000</span></div>
+  <div class="price main"></div>
+  <div class="price admin"></div>
+  <div class="price total"></div>
 
-  <select id="pack">
+  <select class="pack">
     <option data-price="10000">86 Diamonds</option>
     <option data-price="19000">172 Diamonds</option>
     <option data-price="28000">257 Diamonds</option>
   </select>
 
-  <input id="userid" placeholder="User ID">
-  <input id="server" placeholder="Server">
+  <input class="uid" placeholder="User ID">
+  <input class="server" placeholder="Server">
 
-  <a id="order" class="wa-btn" target="_blank">
-    Order via WhatsApp
-  </a>
+  <a class="wa-btn" target="_blank">Order via WhatsApp</a>
+</div>
 
+<!-- ===== FREE FIRE ===== -->
+<div class="card" data-game="Free Fire" data-admin="1000">
+  <div class="game-head">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Free_Fire_Logo.png">
+    <h3>Free Fire</h3>
+  </div>
+
+  <div class="price main"></div>
+  <div class="price admin"></div>
+  <div class="price total"></div>
+
+  <select class="pack">
+    <option data-price="5000">70 Diamonds</option>
+    <option data-price="10000">140 Diamonds</option>
+    <option data-price="25000">355 Diamonds</option>
+  </select>
+
+  <input class="uid" placeholder="Player ID">
+
+  <a class="wa-btn" target="_blank">Order via WhatsApp</a>
+</div>
+
+<!-- ===== PUBG ===== -->
+<div class="card" data-game="PUBG Mobile" data-admin="2000">
+  <div class="game-head">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/PUBG_Mobile_logo.png">
+    <h3>PUBG Mobile</h3>
+  </div>
+
+  <div class="price main"></div>
+  <div class="price admin"></div>
+  <div class="price total"></div>
+
+  <select class="pack">
+    <option data-price="15000">60 UC</option>
+    <option data-price="45000">180 UC</option>
+    <option data-price="120000">600 UC</option>
+  </select>
+
+  <input class="uid" placeholder="Player ID">
+
+  <a class="wa-btn" target="_blank">Order via WhatsApp</a>
 </div>
 
 </div>
 
-<footer>
-© 2026 DANZSHOP
-</footer>
+<footer>© 2026 DANZSHOP</footer>
 
 <script>
 const WA = "6288973654391";
-const ADMIN = 1000;
-
-const pack = document.getElementById("pack");
-const priceText = document.getElementById("price");
-const adminText = document.getElementById("admin");
-const totalText = document.getElementById("total");
-const orderBtn = document.getElementById("order");
-
-const userid = document.getElementById("userid");
-const server = document.getElementById("server");
 
 function rupiah(x){
   return "Rp " + x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");
 }
 
-function update(){
-  let p = pack.options[pack.selectedIndex];
-  let price = Number(p.dataset.price);
-  let total = price + ADMIN;
+document.querySelectorAll(".card").forEach(card=>{
+  const pack = card.querySelector(".pack");
+  const uid = card.querySelector(".uid");
+  const server = card.querySelector(".server");
+  const priceEl = card.querySelector(".main");
+  const adminEl = card.querySelector(".admin");
+  const totalEl = card.querySelector(".total");
+  const btn = card.querySelector(".wa-btn");
 
-  priceText.innerText = rupiah(price);
-  adminText.innerText = rupiah(ADMIN);
-  totalText.innerText = rupiah(total);
+  function update(){
+    const opt = pack.options[pack.selectedIndex];
+    const price = Number(opt.dataset.price);
+    const admin = Number(card.dataset.admin);
+    const total = price + admin;
 
-  let msg =
+    priceEl.innerText = rupiah(price);
+    adminEl.innerText = "Admin: " + rupiah(admin);
+    totalEl.innerText = "Total: " + rupiah(total);
+
+    let msg =
 `Halo DANZSHOP
-Saya mau top up Mobile Legends
+Saya mau top up ${card.dataset.game}
 
-Paket: ${p.text}
+Paket: ${opt.text}
 Harga: ${rupiah(price)}
-Admin: ${rupiah(ADMIN)}
+Admin: ${rupiah(admin)}
 TOTAL: ${rupiah(total)}
 
-ID: ${userid.value}
-Server: ${server.value}`;
+ID: ${uid ? uid.value : ""}
+Server: ${server ? server.value : ""}`;
 
-  orderBtn.href =
-    "https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
-}
+    btn.href = "https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+  }
 
-pack.onchange = update;
-userid.oninput = update;
-server.oninput = update;
-update();
+  pack.onchange = update;
+  if(uid) uid.oninput = update;
+  if(server) server.oninput = update;
+  update();
+});
 </script>
 
 </body>
