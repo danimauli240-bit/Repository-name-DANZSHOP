@@ -1,185 +1,240 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DANZSHOP - Top Up Game</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANZSHOP - Top Up Game</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      text-align: center;
-    }
-
-    header {
-      padding: 30px 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #22c55e;
-    }
-
-    header p {
-      margin-top: 8px;
-      color: #94a3b8;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #020617;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      position: relative;
-    }
-
-    .badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: gold;
-      color: black;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-
-    .game-img {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-
-    h3 {
-      margin: 10px 0 5px;
-    }
-
-    .price {
-      color: #22c55e;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 6px 0;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-    }
-
-    .wa-btn {
-      display: block;
-      margin-top: 12px;
-      background: #22c55e;
-      color: white;
-      padding: 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .wa-btn:hover {
-      background: #16a34a;
-    }
-
-    footer {
-      margin: 40px 0 20px;
-      font-size: 13px;
-      color: #64748b;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
+}
+header{
+  text-align:center;
+  padding:30px 15px;
+}
+header h1{
+  margin:0;
+  color:#22c55e;
+  font-size:28px;
+}
+header p{
+  margin-top:8px;
+  color:#94a3b8;
+}
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.card{
+  background:#020617;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  position:relative;
+}
+.card:hover{
+  transform:translateY(-3px);
+}
+.badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:linear-gradient(135deg,#f59e0b,#facc15);
+  color:#020617;
+  font-size:11px;
+  font-weight:800;
+  padding:5px 10px;
+  border-radius:999px;
+}
+.game-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+}
+.game-img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+}
+h3{
+  margin:0;
+}
+.price{
+  margin:10px 0;
+  font-size:18px;
+  font-weight:bold;
+  color:#22c55e;
+}
+input,select{
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+.wa-btn{
+  display:block;
+  margin-top:15px;
+  background:#22c55e;
+  color:#020617;
+  text-decoration:none;
+  padding:12px;
+  border-radius:10px;
+  font-weight:bold;
+  text-align:center;
+}
+.wa-btn:hover{
+  background:#16a34a;
+}
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  color:#64748b;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>DANZSHOP</h1>
-    <p>Top Up Diamond Game • Aman • Cepat • Terpercaya</p>
-  </header>
+<header>
+  <h1>DANZSHOP</h1>
+  <p>Top Up Diamond Game • Aman • Fast Respon</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <!-- MOBILE LEGENDS -->
-    <div class="card">
-      <div class="badge">BEST SELLER</div>
-      <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
-      <h3>Mobile Legends</h3>
-      <div class="price">Mulai Rp10.000</div>
-
-      <input type="text" placeholder="User ID">
-      <input type="text" placeholder="Server ID">
-
-      <select>
-        <option>86 Diamonds</option>
-        <option>172 Diamonds</option>
-        <option>257 Diamonds</option>
-      </select>
-
-      <a class="wa-btn" href="https://wa.me/6288973654391?text=Halo%20DANZSHOP,%20saya%20ingin%20top%20up%20Mobile%20Legends" target="_blank">
-        Chat WhatsApp
-      </a>
-    </div>
-
-    <!-- FREE FIRE -->
-    <div class="card">
-      <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Free_Fire_Logo.png">
-      <h3>Free Fire</h3>
-      <div class="price">Mulai Rp5.000</div>
-
-      <input type="text" placeholder="Player ID">
-
-      <select>
-        <option>70 Diamonds</option>
-        <option>140 Diamonds</option>
-        <option>355 Diamonds</option>
-      </select>
-
-      <a class="wa-btn" href="https://wa.me/6288973654391?text=Halo%20DANZSHOP,%20saya%20ingin%20top%20up%20Free%20Fire" target="_blank">
-        Chat WhatsApp
-      </a>
-    </div>
-
-    <!-- PUBG -->
-    <div class="card">
-      <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/PUBG_Mobile_logo.png">
-      <h3>PUBG Mobile</h3>
-      <div class="price">Mulai Rp15.000</div>
-
-      <input type="text" placeholder="Player ID">
-
-      <select>
-        <option>60 UC</option>
-        <option>180 UC</option>
-        <option>600 UC</option>
-      </select>
-
-      <a class="wa-btn" href="https://wa.me/6288973654391?text=Halo%20DANZSHOP,%20saya%20ingin%20top%20up%20PUBG%20Mobile" target="_blank">
-        Chat WhatsApp
-      </a>
-    </div>
-
+<!-- MOBILE LEGENDS -->
+<div class="card">
+  <span class="badge">BEST SELLER</span>
+  <div class="game-head">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
+    <h3>Mobile Legends</h3>
   </div>
 
-  <footer>
-    © 2026 DANZSHOP • Top Up Game Online
-  </footer>
+  <div class="price" id="ml-price">Rp 10.000</div>
+
+  <select id="ml-pack">
+    <option data-price="10000">86 Diamonds</option>
+    <option data-price="19000">172 Diamonds</option>
+    <option data-price="28000">257 Diamonds</option>
+  </select>
+
+  <input id="ml-id" placeholder="User ID">
+  <input id="ml-server" placeholder="Server">
+
+  <a id="ml-order" class="wa-btn" target="_blank">Order via WhatsApp</a>
+</div>
+
+<!-- FREE FIRE -->
+<div class="card">
+  <div class="game-head">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Free_Fire_Logo.png">
+    <h3>Free Fire</h3>
+  </div>
+
+  <div class="price" id="ff-price">Rp 5.000</div>
+
+  <select id="ff-pack">
+    <option data-price="5000">70 Diamonds</option>
+    <option data-price="10000">140 Diamonds</option>
+    <option data-price="25000">355 Diamonds</option>
+  </select>
+
+  <input id="ff-id" placeholder="Player ID">
+
+  <a id="ff-order" class="wa-btn" target="_blank">Order via WhatsApp</a>
+</div>
+
+<!-- PUBG -->
+<div class="card">
+  <div class="game-head">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/PUBG_Mobile_logo.png">
+    <h3>PUBG Mobile</h3>
+  </div>
+
+  <div class="price" id="pubg-price">Rp 15.000</div>
+
+  <select id="pubg-pack">
+    <option data-price="15000">60 UC</option>
+    <option data-price="45000">180 UC</option>
+    <option data-price="120000">600 UC</option>
+  </select>
+
+  <input id="pubg-id" placeholder="Player ID">
+
+  <a id="pubg-order" class="wa-btn" target="_blank">Order via WhatsApp</a>
+</div>
+
+</div>
+
+<footer>
+© 2026 DANZSHOP • Top Up Game Online
+</footer>
+
+<script>
+const WA = "6288973654391";
+
+function rupiah(x){
+  return "Rp " + x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");
+}
+
+/* MOBILE LEGENDS */
+function updateML(){
+  let p = ml_pack.options[ml_pack.selectedIndex];
+  let price = p.dataset.price;
+  ml_price.innerText = rupiah(price);
+  ml_order.href =
+    "https://wa.me/"+WA+"?text="+encodeURIComponent(
+      "Halo DANZSHOP\nSaya mau top up Mobile Legends\nPaket: "+p.text+
+      "\nHarga: "+rupiah(price)+"\nID: "+ml_id.value+"\nServer: "+ml_server.value
+    );
+}
+ml_pack.onchange = updateML;
+ml_id.oninput = updateML;
+ml_server.oninput = updateML;
+updateML();
+
+/* FREE FIRE */
+function updateFF(){
+  let p = ff_pack.options[ff_pack.selectedIndex];
+  let price = p.dataset.price;
+  ff_price.innerText = rupiah(price);
+  ff_order.href =
+    "https://wa.me/"+WA+"?text="+encodeURIComponent(
+      "Halo DANZSHOP\nSaya mau top up Free Fire\nPaket: "+p.text+
+      "\nHarga: "+rupiah(price)+"\nID: "+ff_id.value
+    );
+}
+ff_pack.onchange = updateFF;
+ff_id.oninput = updateFF;
+updateFF();
+
+/* PUBG */
+function updatePUBG(){
+  let p = pubg_pack.options[pubg_pack.selectedIndex];
+  let price = p.dataset.price;
+  pubg_price.innerText = rupiah(price);
+  pubg_order.href =
+    "https://wa.me/"+WA+"?text="+encodeURIComponent(
+      "Halo DANZSHOP\nSaya mau top up PUBG Mobile\nPaket: "+p.text+
+      "\nHarga: "+rupiah(price)+"\nID: "+pubg_id.value
+    );
+}
+pubg_pack.onchange = updatePUBG;
+pubg_id.oninput = updatePUBG;
+updatePUBG();
+</script>
 
 </body>
 </html>
