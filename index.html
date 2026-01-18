@@ -1,92 +1,103 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>DANZSHOP – Top Up Diamond Game</title>
+  <meta charset="UTF-8">
+  <title>DANZSHOP - Top Up Diamond Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f6fb;
-  color:#111;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      text-align: center;
+    }
 
-/* HEADER */
-header{
-  background:#111827;
-  color:#fff;
-  padding:22px;
-  text-align:center;
-}
-header h1{margin:0;font-size:26px}
-header p{margin-top:6px;color:#cbd5e1}
+    header {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      padding: 25px;
+      color: white;
+    }
 
-/* CONTAINER */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 15px;
-}
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:22px;
-}
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
 
-/* CARD */
-.card{
-  background:#fff;
-  border-radius:14px;
-  padding:22px;
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
-}
-.card h3{margin:10px 0 5px}
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #f59e0b;
+      color: black;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
 
-/* GAME HEADER */
-.game-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.game-head img{
-  width:60px;
-  height:60px;
-  object-fit:contain;
-}
+    .game-img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
 
-/* LIST */
-ul{
-  padding-left:18px;
-  margin:10px 0;
-}
-ul li{margin-bottom:6px}
+    h3 {
+      margin: 10px 0 5px;
+    }
 
-/* BUTTON */
-.wa-btn{
-  display:block;
-  margin-top:15px;
-  background:#25D366;
-  color:#fff;
-  text-align:center;
-  padding:12px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-.wa-btn:hover{background:#1ebe5d}
+    ul {
+      text-align: left;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #cbd5f5;
+    }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  font-size:13px;
-  color:#64748b;
-}
-</style>
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .wa-btn {
+      display: block;
+      margin-top: 12px;
+      background: #22c55e;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .wa-btn:hover {
+      background: #16a34a;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 
 <body>
@@ -97,70 +108,85 @@ footer{
 </header>
 
 <div class="container">
-  <div class="grid">
 
-    <!-- MOBILE LEGENDS -->
-    <div class="card">
-      <div class="game-head">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mobile_Legends_Bang_Bang_logo.png">
-        <h3>Mobile Legends</h3>
-      </div>
-      <ul>
-        <li>86 Diamond</li>
-        <li>172 Diamond</li>
-        <li>257 Diamond</li>
-        <li>344 Diamond</li>
-      </ul>
-      <a class="wa-btn"
-         href="https://wa.me/6288973654391?text=Halo%20admin,%20saya%20mau%20top%20up%20Diamond%20Mobile%20Legends"
-         target="_blank">
-         Order via WhatsApp
-      </a>
-    </div>
+  <!-- MOBILE LEGENDS -->
+  <div class="card">
+    <span class="badge">BEST SELLER</span>
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Mobile_Legends_Bang_Bang_logo.png">
+    <h3>Mobile Legends</h3>
 
-    <!-- FREE FIRE -->
-    <div class="card">
-      <div class="game-head">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Free_Fire_Logo.png">
-        <h3>Free Fire</h3>
-      </div>
-      <ul>
-        <li>100 Diamond</li>
-        <li>210 Diamond</li>
-        <li>355 Diamond</li>
-        <li>720 Diamond</li>
-      </ul>
-      <a class="wa-btn"
-         href="https://wa.me/6288973654391?text=Halo%20admin,%20saya%20mau%20top%20up%20Diamond%20Free%20Fire"
-         target="_blank">
-         Order via WhatsApp
-      </a>
-    </div>
+    <ul>
+      <li>86 Diamond</li>
+      <li>172 Diamond</li>
+      <li>257 Diamond</li>
+    </ul>
 
-    <!-- PUBG -->
-    <div class="card">
-      <div class="game-head">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/PUBG_Mobile_Logo.png">
-        <h3>PUBG Mobile</h3>
-      </div>
-      <ul>
-        <li>60 UC</li>
-        <li>120 UC</li>
-        <li>325 UC</li>
-        <li>660 UC</li>
-      </ul>
-      <a class="wa-btn"
-         href="https://wa.me/6288973654391?text=Halo%20admin,%20saya%20mau%20top%20up%20UC%20PUBG"
-         target="_blank">
-         Order via WhatsApp
-      </a>
-    </div>
+    <input id="ml-id" placeholder="ID Player">
+    <input id="ml-server" placeholder="Server">
+    <select id="ml-pack">
+      <option>86 Diamond</option>
+      <option>172 Diamond</option>
+      <option>257 Diamond</option>
+    </select>
 
+    <a class="wa-btn" target="_blank"
+       href="https://wa.me/6288973654391?text=Halo%20DANZSHOP%0ASaya%20mau%20topup%20Mobile%20Legends%0AID:%20%5BISI%20ID%5D%0AServer:%20%5BISI%20SERVER%5D%0APaket:%20%5BPILIH%20DIAMOND%5D">
+       Order via WhatsApp
+    </a>
   </div>
+
+  <!-- FREE FIRE -->
+  <div class="card">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/6/6c/Garena_Free_Fire_logo.png">
+    <h3>Free Fire</h3>
+
+    <ul>
+      <li>100 Diamond</li>
+      <li>210 Diamond</li>
+      <li>720 Diamond</li>
+    </ul>
+
+    <input placeholder="ID Player">
+    <select>
+      <option>100 Diamond</option>
+      <option>210 Diamond</option>
+      <option>720 Diamond</option>
+    </select>
+
+    <a class="wa-btn" target="_blank"
+       href="https://wa.me/6288973654391?text=Halo%20DANZSHOP%0ASaya%20mau%20topup%20Free%20Fire">
+       Order via WhatsApp
+    </a>
+  </div>
+
+  <!-- PUBG -->
+  <div class="card">
+    <img class="game-img" src="https://upload.wikimedia.org/wikipedia/en/7/7e/PUBG_Mobile_logo.png">
+    <h3>PUBG Mobile</h3>
+
+    <ul>
+      <li>60 UC</li>
+      <li>325 UC</li>
+      <li>660 UC</li>
+    </ul>
+
+    <input placeholder="ID Player">
+    <select>
+      <option>60 UC</option>
+      <option>325 UC</option>
+      <option>660 UC</option>
+    </select>
+
+    <a class="wa-btn" target="_blank"
+       href="https://wa.me/6288973654391?text=Halo%20DANZSHOP%0ASaya%20mau%20topup%20PUBG%20Mobile">
+       Order via WhatsApp
+    </a>
+  </div>
+
 </div>
 
 <footer>
-© 2026 DANZSHOP • All Rights Reserved
+  © 2026 DANZSHOP • All Rights Reserved
 </footer>
 
 </body>
